@@ -14,11 +14,11 @@ var subscribeHeaders = {
 };
 
 var tags = [
-	{ id: 1001, feed: 12534, name: 'tag1' },
-	{ id: 1002, feed: 12535, name: 'tag2' },
-	{ id: 1003, feed: 12536, name: 'tag3' },
-	{ id: 1004, feed: 12538, name: 'tag4' },
-	{ id: 1005, feed: 12539, name: 'tag5' }
+	{ id: 1001, feed: 65, name: 'tag1' },
+	{ id: 1002, feed: 10, name: 'tag2' },
+	{ id: 1003, feed: 11, name: 'tag3' },
+	{ id: 1004, feed: 66, name: 'tag4' },
+	{ id: 1005, feed: 13, name: 'tag5' }
 ];
 
 ws.on('open', function open() {
