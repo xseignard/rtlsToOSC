@@ -1,8 +1,9 @@
 var WebSocket = require('ws'),
 	osc = require('node-osc');
 
-var client = new osc.Client('127.0.0.1', 5001);
+var client = new osc.Client('localhost', 5001);
 var ws = new WebSocket('ws://localhost:8080');
+var ready = false;
 
 // resource will be replaced in the subscription process
 var subscribeHeaders = {
@@ -30,6 +31,12 @@ ws.on('open', function open() {
 });
 
 ws.on('message', function(data) {
+	if (!ready) {
+		ready = true;
+		var readyMessage = new osc.Message('ready');
+		console.log(readyMessage);
+		client.send(readyMessage);
+	}
 	var message = JSON.parse(data),
 		id = parseInt(message.body.id),
 		datastreams = message.body.datastreams,
