@@ -65,7 +65,7 @@ var interval = setInterval(function() {
 			if (!oscReady) {
 				oscReady = true;
 				var readyMessage = new osc.Message('ready');
-				console.log(readyMessage);
+				//console.log(readyMessage);
 				client.send(readyMessage);
 			}
 			var message = JSON.parse(data),
@@ -80,8 +80,8 @@ var interval = setInterval(function() {
 			oscMessage.append(parseFloat(getValue(datastreams, 'posY')));
 			// batLevel
 			oscMessage.append(parseInt(getValue(datastreams, 'batLevel')));
-			console.log(datastreams);
-			console.log(oscMessage);
+			//console.log(datastreams);
+			//console.log(oscMessage);
 			client.send(oscMessage);
 		});
 	}
