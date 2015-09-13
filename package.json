@@ -5,11 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "node-osc": "1.1.0",
+    "supervisor": "0.7.1",
     "ws": "0.7.2"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node index.js"
+    "start": "supervisor index.js"
   },
   "author": "Xavier Seignard <xavier.seignard@gmail.com>",
   "license": "MIT"
